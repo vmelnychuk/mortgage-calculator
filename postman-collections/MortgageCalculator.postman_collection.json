@@ -1,201 +1,201 @@
 {
-	"info": {
-		"_postman_id": "1ecc878d-2ba1-4423-be92-4aa98acf7d35",
-		"name": "MortgageCalculator",
-		"description": "## About\nThis is simple Mortgage Calculator API\n\n## Endpoints\n* `/api` check the available endpoints",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Check the API",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://{{hostName}}/api",
-					"protocol": "http",
-					"host": [
-						"{{hostName}}"
-					],
-					"path": [
-						"api"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Banks",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://{{hostName}}/api/banks",
-					"protocol": "http",
-					"host": [
-						"{{hostName}}"
-					],
-					"path": [
-						"api",
-						"banks"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add Bank",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Default Bank\",\r\n    \"interestRate\": 40.00,\r\n    \"maximumLoan\": 1000000.00,\r\n    \"minimumDownPayment\": 20.00,\r\n    \"loanTerm\": \"P1Y\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://{{hostName}}/api/banks",
-					"protocol": "http",
-					"host": [
-						"{{hostName}}"
-					],
-					"path": [
-						"api",
-						"banks"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Bank by id",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Default Mortgage\",\r\n    \"interestRate\": 40.00,\r\n    \"maximumLoan\": 1000000.00,\r\n    \"minimumDownPayment\": 20.00,\r\n    \"loanTerm\": \"P1Y\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://{{hostName}}/api/banks/1",
-					"protocol": "http",
-					"host": [
-						"{{hostName}}"
-					],
-					"path": [
-						"api",
-						"banks",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Bank by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://{{hostName}}/api/banks/1",
-					"protocol": "http",
-					"host": [
-						"{{hostName}}"
-					],
-					"path": [
-						"api",
-						"banks",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Bank by id",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Default Bank\",\r\n    \"interestRate\": 40.00,\r\n    \"maximumLoan\": 1000000.00,\r\n    \"minimumDownPayment\": 20.00,\r\n    \"loanTerm\": \"P1Y\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://{{hostName}}/api/banks/1",
-					"protocol": "http",
-					"host": [
-						"{{hostName}}"
-					],
-					"path": [
-						"api",
-						"banks",
-						"1"
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "hostName",
-			"value": "localhost:8080"
-		},
-		{
-			"key": "hostName1",
-			"value": "external-host"
-		}
-	]
+    "info": {
+        "_postman_id": "1ecc878d-2ba1-4423-be92-4aa98acf7d35",
+        "name": "MortgageCalculator",
+        "description": "## About\nThis is simple Mortgage Calculator API\n\n## Endpoints\n* `/api` check the available endpoints",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Check the API",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://{{hostName}}/api",
+                    "protocol": "http",
+                    "host": [
+                        "{{hostName}}"
+                    ],
+                    "path": [
+                        "api"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get All Banks",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://{{hostName}}/api/banks",
+                    "protocol": "http",
+                    "host": [
+                        "{{hostName}}"
+                    ],
+                    "path": [
+                        "api",
+                        "banks"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Add Bank",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"Default Bank\",\r\n    \"interestRate\": 40.00,\r\n    \"maximumLoan\": 1000000.00,\r\n    \"minimumDownPayment\": 20.00,\r\n    \"loanTerm\": \"P1Y\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://{{hostName}}/api/banks",
+                    "protocol": "http",
+                    "host": [
+                        "{{hostName}}"
+                    ],
+                    "path": [
+                        "api",
+                        "banks"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Update Bank by id",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"Default Mortgage\",\r\n    \"interestRate\": 40.00,\r\n    \"maximumLoan\": 1000000.00,\r\n    \"minimumDownPayment\": 20.00,\r\n    \"loanTerm\": \"P1Y\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://{{hostName}}/api/banks/1",
+                    "protocol": "http",
+                    "host": [
+                        "{{hostName}}"
+                    ],
+                    "path": [
+                        "api",
+                        "banks",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Bank by id",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://{{hostName}}/api/banks/1",
+                    "protocol": "http",
+                    "host": [
+                        "{{hostName}}"
+                    ],
+                    "path": [
+                        "api",
+                        "banks",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Delete Bank by id",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"name\": \"Default Bank\",\r\n    \"interestRate\": 40.00,\r\n    \"maximumLoan\": 1000000.00,\r\n    \"minimumDownPayment\": 20.00,\r\n    \"loanTerm\": \"P1Y\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://{{hostName}}/api/banks/1",
+                    "protocol": "http",
+                    "host": [
+                        "{{hostName}}"
+                    ],
+                    "path": [
+                        "api",
+                        "banks",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "hostName",
+            "value": "localhost:8080"
+        },
+        {
+            "key": "hostName1",
+            "value": "external-host"
+        }
+    ]
 }
