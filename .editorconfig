@@ -10,3 +10,7 @@ indent_style = space
 
 [*.{diff, md}]
 trim_trailing_whitespace = false
+
+[*.java]
+ij_java_imports_layout = $*, |, java.**, javax.**, |, *, |, io.task406.**
+ij_java_use_single_class_imports = true
