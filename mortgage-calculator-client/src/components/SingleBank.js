@@ -14,8 +14,8 @@ const SingleBank = ({item}) => (
                     </ul>
                 </div>
                 <div className="card-action">
-                    <a href="#">Edit</a>
-                    <a href="#">Delete</a>
+                    <span>Edit</span>
+                    <span>Delete</span>
                 </div>
             </div>
         </div>
