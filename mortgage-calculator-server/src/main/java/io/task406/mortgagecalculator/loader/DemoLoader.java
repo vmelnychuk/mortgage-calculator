@@ -21,14 +21,14 @@ public class DemoLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        this.bankRepository.save(
-            Bank.builder()
-                .name("Simple Bank")
-                .interestRate(BigDecimal.valueOf(30))
-                .maximumLoan(BigDecimal.valueOf(1000000))
-                .minimumDownPayment(BigDecimal.valueOf(10))
-                .loanTerm(Period.ofYears(1))
-                .build()
-        );
+//        this.bankRepository.save(
+//            Bank.builder()
+//                .name("Simple Bank")
+//                .interestRate(BigDecimal.valueOf(30))
+//                .maximumLoan(BigDecimal.valueOf(1000000))
+//                .minimumDownPayment(BigDecimal.valueOf(10))
+//                .loanTerm(Period.ofYears(1))
+//                .build()
+//        );
     }
 }

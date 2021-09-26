@@ -21,8 +21,14 @@ public class Bank {
     @GeneratedValue
     private Long id;
     private String name;
+    /**
+     * in percentage e.g. 10%, 20%
+     */
     private BigDecimal interestRate;
     private BigDecimal maximumLoan;
+    /**
+     * in percentage e.g. 10%, 20%
+     */
     private BigDecimal minimumDownPayment;
     private Period loanTerm;
 }
