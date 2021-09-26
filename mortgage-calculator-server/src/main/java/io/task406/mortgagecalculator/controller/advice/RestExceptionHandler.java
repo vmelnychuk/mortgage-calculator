@@ -3,6 +3,8 @@ package io.task406.mortgagecalculator.controller.advice;
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 
+import java.util.Objects;
+
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -24,8 +26,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import io.task406.mortgagecalculator.exception.BankNotFoundException;
 import io.task406.mortgagecalculator.exception.IdMismatchException;
-
-import java.util.Objects;
+import io.task406.mortgagecalculator.exception.TooBigLoanAmountException;
+import io.task406.mortgagecalculator.exception.TooSmallDownPaymentException;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
@@ -122,8 +124,22 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(BankNotFoundException.class)
-    protected ResponseEntity<Object> handleIdMismatchException(BankNotFoundException ex) {
+    protected ResponseEntity<Object> handleBankNotFoundException(BankNotFoundException ex) {
         ApiError apiError = new ApiError(NOT_FOUND);
+        apiError.setMessage(ex.getMessage());
+        return buildResponseEntity(apiError);
+    }
+
+    @ExceptionHandler(TooBigLoanAmountException.class)
+    protected ResponseEntity<Object> handleTooBigLoanAmountException(TooBigLoanAmountException ex) {
+        ApiError apiError = new ApiError(BAD_REQUEST);
+        apiError.setMessage(ex.getMessage());
+        return buildResponseEntity(apiError);
+    }
+
+    @ExceptionHandler(TooSmallDownPaymentException.class)
+    protected ResponseEntity<Object> handleTooSmallDownPaymentException(TooSmallDownPaymentException ex) {
+        ApiError apiError = new ApiError(BAD_REQUEST);
         apiError.setMessage(ex.getMessage());
         return buildResponseEntity(apiError);
     }

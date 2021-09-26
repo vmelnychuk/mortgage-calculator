@@ -2,7 +2,7 @@ package io.task406.mortgagecalculator.service;
 
 import java.math.BigDecimal;
 
-public interface MorganCalculator {
+public interface MortgageCalculator {
     /**
      * Calculates monthly payment.
      *

@@ -1,5 +1,6 @@
 package io.task406.mortgagecalculator.dto;
 
+import static io.task406.mortgagecalculator.common.Constants.MAX_ANNUAL_INTEREST_RATE;
 import static io.task406.mortgagecalculator.common.Constants.MAX_LOAN_AMOUNT;
 import static io.task406.mortgagecalculator.common.Constants.MAX_LOAN_TERM;
 
@@ -16,18 +17,29 @@ import lombok.Data;
 @Data
 @Builder
 public class BankRequestDto {
+    @Positive
     private Long id;
+
     @NotNull
     @NotBlank
     private String name;
+
     @NotNull
     @PositiveOrZero
+    @Max(MAX_ANNUAL_INTEREST_RATE)
     private BigDecimal interestRate;
+
+    @NotNull
     @Positive
     @Max(MAX_LOAN_AMOUNT)
     private BigDecimal maximumLoan;
+
+    @NotNull
     @PositiveOrZero
+    @Max(100)
     private BigDecimal minimumDownPayment;
+
+    @NotNull
     @Positive
     @Max(MAX_LOAN_TERM)
     private int loanTerm;

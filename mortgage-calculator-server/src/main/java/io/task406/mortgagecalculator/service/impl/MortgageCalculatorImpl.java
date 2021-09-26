@@ -5,10 +5,10 @@ import java.math.MathContext;
 
 import org.springframework.stereotype.Service;
 
-import io.task406.mortgagecalculator.service.MorganCalculator;
+import io.task406.mortgagecalculator.service.MortgageCalculator;
 
 @Service
-public class MorganCalculatorImpl implements MorganCalculator {
+public class MortgageCalculatorImpl implements MortgageCalculator {
     private static final int MONTHS_IN_YEAR = 12;
     private static final MathContext PRECISION_RATE = MathContext.DECIMAL128;
 

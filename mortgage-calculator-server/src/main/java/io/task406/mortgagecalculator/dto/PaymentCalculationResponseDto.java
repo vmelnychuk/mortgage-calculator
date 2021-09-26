@@ -7,6 +7,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class MonthlyPaymentResponse {
+public class PaymentCalculationResponseDto {
+    private Long id;
     private BigDecimal monthlyPayment;
 }

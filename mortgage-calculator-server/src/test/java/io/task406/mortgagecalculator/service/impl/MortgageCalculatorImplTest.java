@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import io.task406.mortgagecalculator.service.MorganCalculator;
+import io.task406.mortgagecalculator.service.MortgageCalculator;
 
-class MorganCalculatorImplTest {
-    private final MorganCalculator morganCalculator = new MorganCalculatorImpl();
+class MortgageCalculatorImplTest {
+    private final MortgageCalculator mortgageCalculator = new MortgageCalculatorImpl();
 
     @ParameterizedTest
     @CsvSource({
@@ -25,7 +25,7 @@ class MorganCalculatorImplTest {
         int numberOfMonthlyPayments = Integer.parseInt(months);
         BigDecimal expectedPaymentAmount = new BigDecimal(expectedPayment);
 
-        BigDecimal monthlyPayment = morganCalculator.calculateMonthlyPayment(amountBorrowed, annualInterestRate, numberOfMonthlyPayments);
+        BigDecimal monthlyPayment = mortgageCalculator.calculateMonthlyPayment(amountBorrowed, annualInterestRate, numberOfMonthlyPayments);
 
         assertThat(monthlyPayment, comparesEqualTo(expectedPaymentAmount));
     }
@@ -37,7 +37,7 @@ class MorganCalculatorImplTest {
         int numberOfMonthlyPayments = 3;
         BigDecimal expectedPaymentAmount = new BigDecimal(110);
 
-        BigDecimal monthlyPayment = morganCalculator.calculateMonthlyPayment(amountBorrowed, annualInterestRate, numberOfMonthlyPayments);
+        BigDecimal monthlyPayment = mortgageCalculator.calculateMonthlyPayment(amountBorrowed, annualInterestRate, numberOfMonthlyPayments);
 
         assertThat(monthlyPayment, comparesEqualTo(expectedPaymentAmount));
     }

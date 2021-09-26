@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import io.task406.mortgagecalculator.common.Constants;
 import io.task406.mortgagecalculator.exception.BankNotFoundException;
 import io.task406.mortgagecalculator.model.Bank;
 import io.task406.mortgagecalculator.repository.BankRepository;
@@ -11,6 +12,7 @@ import io.task406.mortgagecalculator.service.BankService;
 
 @Service
 public class BankServiceImpl implements BankService {
+
     private final BankRepository bankRepository;
 
     public BankServiceImpl(BankRepository bankRepository) {
@@ -26,7 +28,7 @@ public class BankServiceImpl implements BankService {
     @Override
     public Bank getBank(Long id) {
         return bankRepository.findById(id)
-            .orElseThrow(() -> new BankNotFoundException(String.format("Bank with id '%s' is not found", id)));
+            .orElseThrow(() -> new BankNotFoundException(String.format(Constants.BANK_NOT_FOUND_MESSAGE, id)));
     }
 
     @Override
@@ -39,7 +41,7 @@ public class BankServiceImpl implements BankService {
         if (bankRepository.existsById(bank.getId())) {
             return bankRepository.save(bank);
         } else {
-            throw new BankNotFoundException(String.format("Bank with id '%s' is not found", bank.getId()));
+            throw new BankNotFoundException(String.format(Constants.BANK_NOT_FOUND_MESSAGE, bank.getId()));
         }
     }
 
