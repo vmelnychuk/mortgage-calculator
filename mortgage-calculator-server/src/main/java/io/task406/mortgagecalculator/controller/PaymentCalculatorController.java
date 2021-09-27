@@ -26,12 +26,12 @@ import io.task406.mortgagecalculator.service.PaymentCalculationService;
 @CrossOrigin
 @RequestMapping("/api/v1/calculations")
 @Api(tags = "Calculation Resource")
-public class MortgageCalculatorController {
+public class PaymentCalculatorController {
     private final PaymentCalculationService paymentCalculationService;
     private final ConversionService conversionService;
 
     @Autowired
-    public MortgageCalculatorController(PaymentCalculationService paymentCalculationService, ConversionService conversionService) {
+    public PaymentCalculatorController(PaymentCalculationService paymentCalculationService, ConversionService conversionService) {
         this.paymentCalculationService = paymentCalculationService;
         this.conversionService = conversionService;
     }
@@ -49,7 +49,7 @@ public class MortgageCalculatorController {
 
     @GetMapping
     @ApiOperation(value = "Get all calculations")
-    public ResponseEntity<List<PaymentCalculation>> getCalculation(
+    public ResponseEntity<List<PaymentCalculationResponseDto>> getCalculation(
         @RequestParam(name = "bankId", required = false) Optional<Long> bankId) {
         final List<PaymentCalculation> calculations;
         if (bankId.isPresent()) {
@@ -58,6 +58,10 @@ public class MortgageCalculatorController {
             calculations = paymentCalculationService.getAllCalculations();
         }
 
-        return ResponseEntity.ok(calculations);
+        var calculationsResponse = calculations.stream()
+            .map(calculation -> conversionService.convert(calculation, PaymentCalculationResponseDto.class))
+            .toList();
+
+        return ResponseEntity.ok(calculationsResponse);
     }
 }

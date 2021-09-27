@@ -1,6 +1,7 @@
 package io.task406.mortgagecalculator.dto;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import lombok.Data;
 
@@ -12,4 +13,5 @@ public class BankResponseDto {
     private BigDecimal maximumLoan;
     private BigDecimal minimumDownPayment;
     private int loanTerm;
+    private List<PaymentCalculationResponseDto> paymentCalculations;
 }
