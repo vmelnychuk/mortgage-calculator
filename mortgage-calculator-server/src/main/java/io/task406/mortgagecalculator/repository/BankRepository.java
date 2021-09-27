@@ -1,10 +1,10 @@
 package io.task406.mortgagecalculator.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import io.task406.mortgagecalculator.model.Bank;
 
-@CrossOrigin
-public interface BankRepository extends CrudRepository<Bank, Long> {
+@Repository
+public interface BankRepository extends JpaRepository<Bank, Long> {
 }

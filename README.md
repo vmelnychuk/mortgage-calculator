@@ -21,3 +21,8 @@ This is simple application that implements mortgage calculator.
 * `mortgage-calculator-server` backend with Spring Boot
 * `postman-collections` Postman collections
     * MortgageCalculator.postman_collection.json
+
+### Running locally
+1. Build with command `mvnw`
+2. Import Postman Collections `MortgageCalculator.postman_collection.json` from `postman-collections` directory.
+3. Open in browser Swagger Documentation with link to [Swagger UI](http://localhost:9090/swagger-ui/)
