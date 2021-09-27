@@ -1,6 +1,7 @@
 package io.task406.mortgagecalculator.service.impl;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.closeTo;
 import static org.hamcrest.Matchers.comparesEqualTo;
 
 import java.math.BigDecimal;
@@ -35,10 +36,10 @@ class MortgageCalculatorImplTest {
         BigDecimal amountBorrowed = BigDecimal.valueOf(45000);
         BigDecimal annualInterestRate = BigDecimal.valueOf(5);
         int numberOfMonthlyPayments = 3;
-        BigDecimal expectedPaymentAmount = new BigDecimal(110);
+        BigDecimal expectedPaymentAmount = new BigDecimal(15125.17);
 
         BigDecimal monthlyPayment = mortgageCalculator.calculateMonthlyPayment(amountBorrowed, annualInterestRate, numberOfMonthlyPayments);
 
-        assertThat(monthlyPayment, comparesEqualTo(expectedPaymentAmount));
+        assertThat(monthlyPayment, closeTo(expectedPaymentAmount, BigDecimal.valueOf(0.01)));
     }
 }
